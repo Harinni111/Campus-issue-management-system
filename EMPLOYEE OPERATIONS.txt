@@ -1,0 +1,61 @@
+EMPLOYEE OPERATIONS
+http://localhost:3000/
+AUTHENTICATION:
+
+1. Employee Signup
+POST http://localhost:3000/auth/signup
+
+Body:
+{
+  "username": "emp01",
+  "firstName": "Arun",
+  "lastName": "Kumar",
+  "dob": "2000-05-10",
+  "email": "emp01@gmail.com",
+  "address": "22, North Street, Chennai",
+  "gender": "male",
+  "department": "IT",
+  "password": "emp@123"
+}
+
+2.Login
+POST http://localhost:3000/auth/login
+
+Body:
+{
+  "username": "emp01",
+  "password": "emp@123"
+}
+
+*Pending user → Invalid credentials* else logs in
+check cookie "auth_token"
+
+3. Create issue(employee)
+POST http://localhost:3000/auth/issues
+
+Body:
+{
+  "title": "Printer not working",
+  "description": "Printer near lab 204 is not responding",
+  "department": "Facilities"
+}
+
+4. View issues
+GET  http://localhost:3000/issues
+
+5.Edit own issues(employee)
+PUT http://localhost:3000/issueID
+
+Body:
+{
+  "title": "Printer not working properly",
+  "description": "Printer jams frequently"
+}
+
+6.Forbidden Update Test (put)
+Body:
+{
+  "status": "RESOLVED"
+}
+output:error
+

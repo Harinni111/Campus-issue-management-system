@@ -1,0 +1,26 @@
+MANAGER OPERATIONS
+
+1.Manager login
+POST http://localhost:3000/auth/login
+Body:
+{
+  "username": "hr01",
+  "password": "Abcde@123"
+}
+
+2.view department issues
+GET http://localhost:3000/issues
+
+Returns:
+Issues assigned to manager’s department
+From all employees
+
+3.Update issue status
+PUT http://localhost:3000/issues/{issueId}
+
+Body:
+{
+  "status": "IN_PROGRESS"
+  "remark": "Assigned technician to inspect"
+}
+
