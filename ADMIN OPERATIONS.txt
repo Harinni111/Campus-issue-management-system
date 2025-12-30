@@ -1,0 +1,23 @@
+ADMIN OPERATIONS:
+
+1.Admin login
+POST: http://localhost:3000/auth/login
+body:
+
+{
+  "username": "admin",
+  "password": "StrongPassword@123"
+}
+
+2.View pending users
+GET: http://localhost:3000/admin/users/pending
+
+3.Approve user
+PUT: http://localhost:3000/admin/users/{username}/approve
+
+4.Promote employee to manager
+PUT: http://localhost:3000/admin/users/{username}/promote
+
+5.view all issues
+GET: http://localhost:3000/issues
+

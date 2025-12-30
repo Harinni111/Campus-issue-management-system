@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manager Dashboard</title>
+
+  <link rel="stylesheet" href="/common/styles.css" />
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="card">
+      <h1>Manager Dashboard</h1>
+      <p id="welcome" class="text-muted"></p>
+    </div>
+
+    <!-- ISSUES -->
+    <div class="card">
+      <h2 class="section-title">Department Issues</h2>
+      <div id="issues"></div>
+    </div>
+
+    <!-- LOGOUT -->
+    <div class="card">
+      <button class="btn btn-secondary" onclick="logout()">Logout</button>
+    </div>
+
+  </div>
+
+  <script src="../common/authGuard.js"></script>
+  <script src="../common/logout.js"></script>
+  <script>
+   authGuard(["MANAGER"]);
+   </script>
+  <script src="manager.js"></script>
+
+</body>
+</html>

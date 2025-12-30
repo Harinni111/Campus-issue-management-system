@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Employee Dashboard</title>
+
+  <!-- Global enterprise styles -->
+  <link rel="stylesheet" href="/common/styles.css" />
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- HEADER CARD -->
+    <div class="card">
+      <h1>Employee Dashboard</h1>
+      <p id="welcome" class="text-muted"></p>
+    </div>
+
+    <!-- CREATE ISSUE CARD -->
+    <div class="card">
+      <h2 class="section-title">Create New Issue</h2>
+
+      <label>Title</label>
+      <input id="issueTitle" placeholder="Short issue title" />
+
+      <label>Description</label>
+      <textarea id="issueDescription" placeholder="Describe the issue clearly"></textarea>
+
+      <label>Assign to Department</label>
+      <select id="issueDepartment">
+        <option value="">Select department</option>
+        <option value="IT">IT</option>
+        <option value="Facilities">Facilities</option>
+        <option value="HR">HR</option>
+      </select>
+
+      <button class="btn btn-primary" onclick="createIssue()">
+        Submit Issue
+      </button>
+    </div>
+
+    <!-- MY ISSUES CARD -->
+    <div class="card">
+      <h2 class="section-title">My Issues</h2>
+      <div id="issues"></div>
+    </div>
+
+    <!-- FOOTER / LOGOUT -->
+    <div class="card">
+      <button class="btn btn-secondary" onclick="logout()">Logout</button>
+    </div>
+
+  </div>
+
+  <!-- Guards & Scripts -->
+  <script src="../common/authGuard.js"></script>
+  <script src="../common/logout.js"></script>
+  <script>
+  authGuard(["EMPLOYEE"]);
+  </script>
+  <script src="employee.js"></script>
+
+</body>
+</html>

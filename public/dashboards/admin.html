@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+
+  <!-- Global enterprise styles -->
+  <link rel="stylesheet" href="/common/styles.css" />
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <h1>Admin Dashboard</h1>
+        <p id="welcome" class="text-muted"></p>
+      </div>
+
+      <button class="btn btn-secondary" onclick="logout()">
+        Logout
+      </button>
+    </div>
+
+    <!-- TABS -->
+    <div class="card">
+      <div style="display:flex; gap:12px;">
+        <button
+          id="usersTabBtn"
+          class="btn btn-primary"
+          onclick="showTab('users')">
+          Users
+        </button>
+
+        <button
+          id="issuesTabBtn"
+          class="btn btn-secondary"
+          onclick="showTab('issues')">
+          Issues
+        </button>
+      </div>
+    </div>
+
+    <!-- USERS TAB -->
+    <div id="usersTab" class="card">
+      <h2 class="section-title">User Management</h2>
+      <h3 class="section-title">Managers</h3>
+      <div id="managersList"></div>
+
+      <h3 class="section-title" style="margin-top:30px;">Employees</h3>
+      <div id="employeesList"></div>
+
+    </div>
+
+    <!-- ISSUES TAB -->
+    <div id="issuesTab" class="card" style="display:none;">
+      <h2 class="section-title">All Issues</h2>
+      <div id="issuesList"></div>
+    </div>
+
+  </div>
+
+  <!-- Guards & scripts -->
+  <script src="../common/authGuard.js"></script>
+  <script src="../common/logout.js"></script>
+  <script>
+  authGuard(["ADMIN"]);
+  </script>
+  <script src="admin.js"></script>
+
+</body>
+</html>
